@@ -71,7 +71,6 @@ export default {
   methods: {
     async getUserList () {
       const { data: res } = await this.$axios.get('users', { params: this.queryInfo })
-      // const { data: res } = await this.$axios.get('users')
       if (res.code !== 200) {
         return this.$message.error('获取用户列表失败！')
       }
