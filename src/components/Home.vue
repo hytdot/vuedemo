@@ -28,10 +28,10 @@
               <span>设备管理</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item index="1-4-1">
+            <el-menu-item index="equipment" @click="saveNavState('equipment')">
               <template slot="title">
                 <i class="el-icon-menu"></i>
-                <span>导航一</span>
+                <span>设备列表</span>
               </template>
             </el-menu-item>
           </el-submenu>
