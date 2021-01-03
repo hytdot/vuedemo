@@ -45,10 +45,10 @@
               <span>数据管理</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item index="1-4-1">
+            <el-menu-item index="data" @click="saveNavState('data')">
               <template slot="title">
                 <i class="el-icon-menu"></i>
-                <span>导航一</span>
+                <span>监测数据</span>
               </template>
             </el-menu-item>
           </el-submenu>
@@ -57,54 +57,27 @@
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
-              <i class="el-icon-s-release"></i>
+              <i class="el-icon-s-marketing"></i>
               <!-- 文本 -->
-              <span>故障诊断</span>
+              <span>运行状态</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item index="1-4-1">
+            <el-menu-item index="destate" @click="saveNavState('destate')">
               <template slot="title">
                 <i class="el-icon-menu"></i>
-                <span>导航一</span>
+                <span>驱动端</span>
+              </template>
+            </el-menu-item>
+            <!-- 二级菜单 -->
+            <el-menu-item index="festate" @click="saveNavState('festate')">
+              <template slot="title">
+                <i class="el-icon-menu"></i>
+                <span>风扇端</span>
               </template>
             </el-menu-item>
           </el-submenu>
 
           <el-submenu index="4">
-            <!-- 一级菜单的模板区域 -->
-            <template slot="title">
-              <!-- 图标 -->
-              <i class="el-icon-s-marketing"></i>
-              <!-- 文本 -->
-              <span>故障预测</span>
-            </template>
-            <!-- 二级菜单 -->
-            <el-menu-item index="1-4-1">
-              <template slot="title">
-                <i class="el-icon-menu"></i>
-                <span>导航一</span>
-              </template>
-            </el-menu-item>
-          </el-submenu>
-
-          <el-submenu index="5">
-            <!-- 一级菜单的模板区域 -->
-            <template slot="title">
-              <!-- 图标 -->
-              <i class="el-icon-s-order"></i>
-              <!-- 文本 -->
-              <span>模型管理</span>
-            </template>
-            <!-- 二级菜单 -->
-            <el-menu-item index="models" @click="saveNavState('models')">
-              <template slot="title">
-                <i class="el-icon-menu"></i>
-                <span>模型列表</span>
-              </template>
-            </el-menu-item>
-          </el-submenu>
-
-          <el-submenu index="6">
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
@@ -142,6 +115,11 @@ export default {
   },
   created () {
     this.activePath = window.sessionStorage.getItem('activePath')
+  },
+  watch: {
+    '$route'(toRouter, fromRouter) {
+      this.activePath = window.sessionStorage.getItem('activePath')
+    }
   },
   methods: {
     logout () {

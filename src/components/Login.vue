@@ -62,7 +62,7 @@ export default {
         if (res.code !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
         window.sessionStorage.setItem('code', res.code)
-        this.$router.push('/home')
+        this.$router.push('/welcome')
       })
     }
   }

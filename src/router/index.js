@@ -5,6 +5,9 @@ import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
 import Users from '../components/user/Users.vue'
 import Equipment from '../components/equipment/Equipment.vue'
+import Destate from '../components/runstate/Destate.vue'
+import Festate from '../components/runstate/Festate.vue'
+import Data from '../components/data/Data.vue'
 
 Vue.use(Router)
 
@@ -26,7 +29,10 @@ const router = new Router({
       children: [
         { path: '/welcome', component: Welcome },
         { path: '/users', component: Users },
-        { path: '/equipment', component: Equipment}
+        { path: '/equipment', component: Equipment},
+        { path: '/destate', component: Destate},
+        { path: '/festate', component: Festate},
+        { path: '/data', component: Data}
       ]
     }
   ]
